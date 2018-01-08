@@ -595,7 +595,7 @@ var CalendarService = (function () {
     // Devido ao passar p/ o calendar estar subtraindo 1 dia, e juntando com a hora
     CalendarService.prototype.corrigiData = function (data, hora) {
         var date = new Date(data);
-        return new Date(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 2) + " " + hora);
+        return new Date(date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + (date.getDate() + 1) + " " + hora);
     };
     CalendarService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),

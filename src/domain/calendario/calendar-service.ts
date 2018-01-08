@@ -19,7 +19,7 @@ export class CalendarService{
      // Devido ao passar p/ o calendar estar subtraindo 1 dia, e juntando com a hora
      corrigiData(data, hora){
         let date = new Date(data);
-        return new Date(date.getFullYear() + "-" + (date.getMonth()+1) + "-" + (date.getDate()+2) + " " + hora);
+        return new Date(date.getFullYear() + "-" + (date.getMonth()+1) + "-" + (date.getDate()+1) + " " + hora);
     }
 
 }
