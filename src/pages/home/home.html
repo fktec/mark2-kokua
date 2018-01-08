@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="content-principal" padding>
+
+    <ion-slides (ionSlideDidChange)="slideChanged()" pager>
+
+     <ion-slide>
+        <div [formGroup]="meuForm" class="div-mapa">
+          <input id="pac-input" class="controls" formControlName="mapa" name="mapa" type="text" placeholder="Nome do evento">
+          <div [class.invalid]="meuForm.controls.mapa.invalid && (ehTrue)"  #map id="map"></div>
+        </div>           
+      </ion-slide>
+
+
+    <!-- SLIDE FOTO  -->
+      <ion-slide >
+        <ion-content [formGroup]="meuForm" class="content-form">
+                
+          <ion-item class="item-foto">
+                <button class="item-borda circulo-foto botao-camera" (click)="escolheImagem()">
+                        <img formControlName="foto" name="foto" class="imagem-foto" *ngIf="agendamento.ehFoto()" [src]="agendamento.url">    
+                        <ion-icon *ngIf="!agendamento.ehFoto()" name="camera"></ion-icon>
+                </button>
+          </ion-item>              
+       
+          <ion-item [class.invalid]="meuForm.controls.evento.invalid && (ehTrue)" class="item-input-foto item-borda">
+              <ion-input maxlength="50" formControlName="evento" name="evento" class="input-foto" type="text" [(ngModel)]="agendamento.evento" placeholder="Nome do evento"></ion-input>
+          </ion-item>
+       
+      </ion-content>    
+      </ion-slide> 
+
+      <!-- SLIDE CATEGORIA -->
+      <ion-slide>
+          <ion-content [formGroup]="meuForm" class="content-form">
+            
+              <ion-item [class.invalid]="meuForm.controls.categoria.invalid && (ehTrue)" class="item-select item-borda" >
+                  <ion-label>Categoria do evento</ion-label>
+                  <ion-select formControlName="categoria" name="categoria" class="slide-descricao-select" [(ngModel)]="agendamento.categoria">
+                    <ion-option *ngFor="let categoria of agendamento.categorias" >{{categoria}}</ion-option>
+                  </ion-select>
+                </ion-item>
+            
+              <ion-item [class.invalid]="meuForm.controls.descricao.invalid && (ehTrue)" class="item-textarea item-borda">
+                  <ion-textarea maxlength="150" formControlName="descricao" name="descricao" id="textarea-descricao"  rows="5"  [(ngModel)]="agendamento.descricao" placeholder="Descrição do evento"></ion-textarea>
+              </ion-item>
+        </ion-content>  
+      </ion-slide>
+
+      <!-- SLIDE DATA e SITE -->
+      <ion-slide>
+        <ion-content [formGroup]="meuForm" class="content-form">
+
+            <ion-label class="label-slide-data">Preencha com a data de início e fim do evento</ion-label>
+            <ion-grid [class.invalid]="(meuForm.controls.dataInicial.invalid || meuForm.controls.dataFinal.invalid || meuForm.controls.horaInicial.invalid || meuForm.controls.horaFinal.invalid) && (ehTrue)" class="grid-data-hora">
+                <ion-row>
+                    <ion-col>
+                        <ion-datetime [(ngModel)]="agendamento.dataInicial" formControlName="dataInicial" displayFormat="DD/MM/YY" name="dataInicial" placeholder="Data 1" ></ion-datetime>
+                    </ion-col>
+                    <ion-col>
+                        <ion-datetime [(ngModel)]="agendamento.dataFinal" formControlName="dataFinal" name="dataFinal" displayFormat="DD/MM/YY" placeholder="Data 2"></ion-datetime>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-datetime [(ngModel)]="agendamento.horaInicial" formControlName="horaInicial" name="horaInicial"  displayFormat="HH:mm" placeholder="Hora 1"></ion-datetime>
+                    </ion-col>
+                    <ion-col>
+                        <ion-datetime [(ngModel)]="agendamento.horaFinal" formControlName="horaFinal" name="horaFinal"  displayFormat="HH:mm" placeholder="Hora 2"></ion-datetime>
+                    </ion-col>
+                </ion-row>    
+            </ion-grid>        
+
+            <!-- Preço e site -->
+            <ion-label class="label-slide-data">Preço do ingresso</ion-label>
+
+            <ion-item [class.invalid]="meuForm.controls.precoMasculino.invalid && (ehTrue)" class="item-mascfem item-borda">
+                <ion-label >M:</ion-label>
+                <ion-input class="input-foto" formControlName="precoMasculino" name="precoMasculino" [(ngModel)]="agendamento.ingressoMasculino" type="number"></ion-input>
+            </ion-item>
+            <ion-item [class.invalid]="meuForm.controls.precoFeminino.invalid && (ehTrue)" class="item-mascfem item-borda">
+                <ion-label >F:</ion-label>
+                <ion-input class="input-foto" formControlName="precoFeminino" name="precoFeminino" [(ngModel)]="agendamento.ingressoFeminino" type="number"></ion-input>
+            </ion-item>
+
+          <ion-item [class.invalid]="meuForm.controls.site.invalid && (ehTrue)" class="input-site item-input-foto item-borda">
+              <ion-input maxlength="50" formControlName="site" name="site" class="input-foto" type="text" [(ngModel)]="agendamento.site" placeholder="Site de compra do ingresso"></ion-input>
+          </ion-item>
+       
+        
+          
+      </ion-content>  
+    </ion-slide>
+         
+    </ion-slides>
+    <button class="botao-geral" ion-button block type="submit" (click)="goToSlide()">{{botaoContinuar}}</button>
+    
+    
+  </ion-content>

@@ -1,0 +1,61 @@
+
+
+.item-mascfem input{
+    text-align: left;
+    text-align: -webkit-left;
+}
+
+.label-slide-data{
+    white-space: normal;
+    color: white;
+}
+
+.grid-data-hora {
+    height: 23%;
+}
+
+.grid-data-hora ion-row{
+    height: 50%;
+}
+
+.grid-data-hora ion-datetime{   
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(9, 136, 125);
+    color: white;
+    align-items: center!important;
+}
+
+.item-mascfem{
+    overflow: hidden;
+    width: 40%!important;
+    border-radius: 0.9em;
+    height: 1.9em;
+}
+
+.item-mascfem .item-inner{
+    border: none!important;
+}
+
+.label-precoIngresso{
+    margin-top: 9%;
+}
+
+.list-mascfem{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+}
+
+.input-site{
+    margin-top: 1%; 
+    height: 1.9em;
+}
+
+// EXTRAS
+.item-block{                // Retira a altura mínima dos inputs
+    min-height: 0;
+}

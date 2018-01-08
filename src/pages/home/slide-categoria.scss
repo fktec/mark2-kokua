@@ -1,0 +1,72 @@
+// Mod text-area - PLACEHOLDER VERTICAL CENTER
+textarea{
+    width: 100%;
+    height:100px;
+    text-align: center;
+}
+
+#item-descricao-textarea{
+    padding: 0;
+    border-radius: 30px;
+}
+
+.item-inner{
+    padding: 0!important;
+}
+
+#textarea-descricao ::-webkit-input-placeholder { /* WebKit browsers */
+    line-height:100px;
+   
+}
+  
+#textarea-descricao :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    line-height:100px;        
+    
+}
+        
+#textarea-descricao :-ms-input-placeholder { /* Internet Explorer 10+ */
+    line-height:100px;
+}
+
+// Mod slide categoria / select
+.slide-descricao-select{
+    max-width: 100%;
+    width: 90%;
+    text-align: center;
+    background-color: rgb(214, 208, 208);
+    border-radius: 0.8em;
+    margin-bottom: 2%;
+}
+
+// Extras
+.bloco-select{
+    height: 22%;
+    border-radius: 0.8em;
+    background-color: blue;
+}
+
+.item-select{
+    width: 90%;
+    border-radius: 0.8em;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+}
+
+.item-textarea{
+    border-radius: 0.8em; 
+    margin-top: 15%;
+}
+
+
+// Windows Phone
+.text-input-wp {
+    border: none;
+}    
+
+.select-wp {
+    border: none; 
+}   

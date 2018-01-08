@@ -1,0 +1,59 @@
+ion-icon[name="camera"]{
+    font-size: 5.3em;
+}
+
+.circulo-foto{
+    background: white!important; 
+    height: 200px!important;
+    width: 200px!important;
+    border-radius: 50%;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15%;
+    top: 0.3em;
+    text-align: -webkit-center;
+    padding: 0;
+
+    align-items: center;
+    overflow: hidden!important;
+}
+
+.circulo-foto ion-label{
+    margin: 0;
+}
+
+.item-foto{
+    background: transparent!important;
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+.imagem-foto{
+    height: 100%!important;
+    width: 100%!important;
+}
+
+.botao-camera{
+    padding: 0;
+}
+
+.input-foto{
+    width: 100%;
+//    margin-left: 0;
+}
+
+.item-input-foto{      // ion-item >> input-foto
+    padding: 0!important;
+    text-align: center;
+    border-radius: 0.8em;
+}
+
+.text-input{
+    text-align: center;
+}
+
+
+// Extras
+.item-md.item-block .item-inner{
+    border-bottom: 0!important;
+}

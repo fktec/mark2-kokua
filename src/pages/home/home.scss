@@ -1,0 +1,61 @@
+page-home {
+
+    .invalid {
+        border: 0.2em solid #ea6153!important;
+    }
+
+    .scroll-content{
+        overflow: auto;
+        text-align: -webkit-center!important;
+        text-align: center;
+    }
+
+    .slide-zoom{
+        height: 100%;
+    }
+
+    ion-slides{
+        height: 90%!important;
+    }
+
+    // Extras
+    .content-form{
+        text-align: center;
+        text-align: -webkit-center;
+        background-color: transparent!important;
+    }
+
+    .content-form .scroll-content{
+        padding-top: 7px!important;
+    }    
+
+    .content-principal{
+        background-image: linear-gradient(to right, #50b4d6 30%, #18e0b5);
+    }
+
+    .item-borda{
+        border: 0.1em solid blue;
+        width: 97%;
+    }
+
+    item-inner{
+        border: 0!important;
+    }
+
+    .botao-geral{
+        border-radius: 2em;
+        width: 42%;
+        font-size: 1.2em;
+    }
+
+
+    // IOS
+    .content-ios:not([no-bounce]) > .scroll-content::before, .content-ios:not([no-bounce]) > .scroll-content::after{
+        width: 0!important;
+    }
+
+    ion-app.ios [padding] .scroll-content{
+        padding-right: 14px!important;
+    }
+
+}
